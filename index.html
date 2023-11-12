@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyPress code</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+        .main {
+            width: 100%;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Roboto Mono', monospace !important;
+        }
+
+        h3{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            position: relative;
+            height: 80px;
+            font-size: 2.5rem;
+        }
+        h3::after{
+            content: "";
+            width: 1000%;
+            height: 2px;
+            background-color: rgb(114, 114, 123);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+
+        }
+
+        .main h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .main h4 {
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Javascript Key Code</h3>
+    <div class="main">
+        <h2 class="info">Press any key to get the JavaScript event keycode info</h2>
+        <h1></h1>
+        <h4></h4>
+    </div>
+
+    <script>
+        window, addEventListener('keydown', (e) => {
+            document.querySelector('h4').innerHTML = e.key
+            document.querySelector('h1').innerHTML = e.keyCode
+            if (e)
+                document.querySelector('.info').style.display = 'none'
+        })
+    </script>
+
+</body>
+
+</html>
